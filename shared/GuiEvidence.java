@@ -11,12 +11,24 @@ public final class GuiEvidence {
       window.validate();
       if (window instanceof RootPaneContainer container) {
         JRootPane root = container.getRootPane();
-        root.paintImmediately(0, 0, root.getWidth(), root.getHeight());
+        RepaintManager manager = RepaintManager.currentManager(root);
+        boolean buffered = manager.isDoubleBufferingEnabled();
+        manager.setDoubleBufferingEnabled(false);
+        Graphics graphics = window.getGraphics();
+        try {
+          if (graphics != null) window.paintAll(graphics);
+        } finally {
+          if (graphics != null) graphics.dispose();
+          manager.setDoubleBufferingEnabled(buffered);
+        }
       } else {
         Graphics graphics = window.getGraphics();
         if (graphics != null) {
-          try { window.paintAll(graphics); }
-          finally { graphics.dispose(); }
+          try {
+            window.paintAll(graphics);
+          } finally {
+            graphics.dispose();
+          }
         }
       }
       Toolkit.getDefaultToolkit().sync();
