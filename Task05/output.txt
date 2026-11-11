@@ -1,4 +1,8 @@
 $ java ConverterValidation
+PASS supplied Converter valid conversion
+SCREENSHOT supplied-converter-valid.png
+PASS supplied Converter invalid input
+SCREENSHOT supplied-converter-invalid.png
 SCREENSHOT FrameConverter-valid-dialog.png
 PASS FrameConverter valid button conversion
 SCREENSHOT FrameConverter-invalid-dialog.png

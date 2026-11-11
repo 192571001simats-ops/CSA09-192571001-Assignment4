@@ -36,6 +36,7 @@ public class Converter extends JFrame {
     } catch (NumberFormatException e) {
       result.setText("Invalid amount");
     }
+    pack();
   }
 
   public static void main(String[] args) {

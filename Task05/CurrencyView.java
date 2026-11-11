@@ -15,14 +15,17 @@ public class CurrencyView extends JFrame {
   CurrencyView(String title, boolean dialogs) {
     super(title);
     this.dialogs = dialogs;
-    setLayout(new FlowLayout(FlowLayout.LEFT, 12, 15));
-    add(new JLabel("Amount"));
-    add(amount);
-    add(from);
-    add(new JLabel("to"));
-    add(to);
-    add(button);
-    add(result);
+    setLayout(new BorderLayout(12, 12));
+    JPanel form = new JPanel(new FlowLayout(FlowLayout.LEFT, 12, 15));
+    form.add(new JLabel("Amount"));
+    form.add(amount);
+    form.add(from);
+    form.add(new JLabel("to"));
+    form.add(to);
+    form.add(button);
+    result.setBorder(BorderFactory.createEmptyBorder(8, 16, 16, 16));
+    add(form, BorderLayout.NORTH);
+    add(result, BorderLayout.CENTER);
     setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     addWindowListener(
         new WindowAdapter() {
@@ -32,6 +35,8 @@ public class CurrencyView extends JFrame {
           }
         });
     pack();
+    setMinimumSize(new Dimension(620, 130));
+    setSize(620, 130);
     setLocation(30, 30);
   }
 
