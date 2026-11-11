@@ -1,0 +1,36 @@
+# Event Driven Desktop Applications
+
+Athisaya U  
+192571001  
+CSA09 Programming in Java  
+Assignment 4
+
+Java 21 implementations and captured execution evidence for 6 tasks. Every task folder contains its Java files, input fixtures or generators, output.txt and output screenshots. Measurements also have results.csv and summary.csv.
+
+## Execution
+
+A full JDK 21 is required. Windows PowerShell: `./run_all.ps1`. Linux or macOS: `bash run_all.sh`. These scripts compile each task independently and run its validation entry points. New execution logs and timing summaries are written under runs/TaskNN, keeping the captured task-folder evidence together with its report. Supplied code completions are separate from intentionally incorrect reference variants.
+
+MySQL setup is in schema.sql. The default lab connection is jdbc:mysql://127.0.0.1:3306/java_assignments?rewriteBatchedStatements=true. JAVA_ASSIGNMENT_DB_URL, JAVA_ASSIGNMENT_DB_USER and JAVA_ASSIGNMENT_DB_PASSWORD select the local lab database. The default user is root and the default password is empty; a local configured account can be supplied through those environment variables. The driver is downloaded from Maven Central and checked against SHA-256. Tests create and reset only the named assignment tables.
+
+The GUI programs require a desktop display. Interactive entry points are FeeWindow, AppointmentDesk, LibrarySearch, DrawPad, Converter and EventRegistration in their respective task builds. ConverterStyleLauncher accepts frame, named, anonymous or lambda. Screenshots are captured from the running interfaces; execution-output.png displays the saved real execution log.
+
+## Tasks
+
+| Folder | Executed entry points |
+| --- | --- |
+| Task01 | FeeValidation |
+| Task02 | AppointmentValidation |
+| Task03 | ResizeValidation |
+| Task04 | DrawValidation |
+| Task05 | ConverterValidation |
+| Task06 | RegistrationValidation |
+
+## Measurements
+
+Two warmups and five measured trials are retained where timing is requested. Tables use milliseconds; the raw CSV stores nanoseconds and heap occupancy delta. Input generation is outside timed sections. Heap occupancy is not an allocated-byte count. JVM warmup, garbage collection, caching and shared-machine scheduling limit small timing comparisons. The report separates actual observations from asymptotic analysis.
+
+## Report
+
+[Completed report PDF](report/Athisaya_U_Java_Assignment4_Completed.pdf)  
+[Editable Word report](report/Athisaya_U_Java_Assignment4_Completed.docx)
