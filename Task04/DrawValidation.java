@@ -6,6 +6,7 @@ import javax.tools.*;
 
 public class DrawValidation {
   public static void main(String[] args) throws Exception {
+    Class.forName("java.awt.event.MouseEvent");
     DrawPad[] box = new DrawPad[1];
     EventQueue.invokeAndWait(
         () -> {
@@ -37,14 +38,15 @@ public class DrawValidation {
     EventQueue.invokeAndWait(
         () -> {
           box[0].setState(Frame.NORMAL);
-          box[0].setVisible(false);
-          box[0].setVisible(true);
+          box[0].toFront();
           box[0].repaint();
         });
-    Thread.sleep(200);
+    Thread.sleep(800);
     EventQueue.invokeAndWait(
         () -> {
-          Bench.require(box[0].pointCount() == 3, "stored dots survive restoration and repaint");
+          Bench.require(
+              box[0].getState() == Frame.NORMAL && box[0].pointCount() == 3,
+              "stored dots survive restoration and repaint");
           GuiEvidence.capture(box[0], "dots-after-restore.png");
           GuiEvidence.finish();
         });

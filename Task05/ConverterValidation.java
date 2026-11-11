@@ -2,10 +2,13 @@ import javax.swing.*;
 
 public class ConverterValidation {
   public static void main(String[] args) throws Exception {
+    Converter[] suppliedWindow = new Converter[1];
+    JTextField[] suppliedAmount = new JTextField[1];
     SwingUtilities.invokeAndWait(
         () -> {
           try {
             Converter supplied = new Converter();
+            suppliedWindow[0] = supplied;
             supplied.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             supplied.setLocation(30, 30);
             supplied.setVisible(true);
@@ -14,17 +17,34 @@ public class ConverterValidation {
             amountField.setAccessible(true);
             resultField.setAccessible(true);
             JTextField amount = (JTextField) amountField.get(supplied);
+            suppliedAmount[0] = amount;
             JLabel result = (JLabel) resultField.get(supplied);
             amount.setText("1000");
             amount.postActionEvent();
             Bench.require(result.getText().equals("12.00"), "supplied Converter valid conversion");
-            GuiEvidence.capture(supplied, "supplied-converter-valid.png");
-            amount.setText("bad");
-            amount.postActionEvent();
+
+          } catch (ReflectiveOperationException e) {
+            throw new RuntimeException(e);
+          }
+        });
+    Thread.sleep(500);
+    SwingUtilities.invokeAndWait(
+        () -> {
+          GuiEvidence.capture(suppliedWindow[0], "supplied-converter-valid.png");
+          suppliedAmount[0].setText("bad");
+          suppliedAmount[0].postActionEvent();
+        });
+    Thread.sleep(500);
+    SwingUtilities.invokeAndWait(
+        () -> {
+          try {
+            var resultField = Converter.class.getDeclaredField("result");
+            resultField.setAccessible(true);
+            JLabel result = (JLabel) resultField.get(suppliedWindow[0]);
             Bench.require(
                 result.getText().equals("Invalid amount"), "supplied Converter invalid input");
-            GuiEvidence.capture(supplied, "supplied-converter-invalid.png");
-            supplied.dispose();
+            GuiEvidence.capture(suppliedWindow[0], "supplied-converter-invalid.png");
+            suppliedWindow[0].dispose();
           } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
           }

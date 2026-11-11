@@ -1,0 +1,12 @@
+$ java com.sun.tools.javac.Main -encoding UTF-8 -g -d build @sources.txt
+$ compile_status=0
+Compiler exit code: 0
+$ java -Xms128m -Xmx512m ResizeValidation
+PASS resizing preserves controls and grows results 640
+SCREENSHOT library-640x400.png
+PASS resizing preserves controls and grows results 900
+SCREENSHOT library-900x600.png
+PASS resizing preserves controls and grows results 1200
+SCREENSHOT library-1200x760.png
+$ run_status=0
+Program exit code: 0
