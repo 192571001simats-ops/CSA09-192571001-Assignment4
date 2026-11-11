@@ -1,0 +1,9 @@
+PASS FrameConverter original button works
+PASS FrameConverter original Enter has no handler
+PASS NamedConverter original button works
+PASS NamedConverter original Enter has no handler
+PASS AnonymousConverter original button works
+PASS AnonymousConverter original Enter has no handler
+PASS LambdaConverter original button works
+PASS LambdaConverter original Enter has no handler
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
