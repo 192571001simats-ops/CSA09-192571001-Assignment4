@@ -1,0 +1,11 @@
+$ java ResizeValidation
+PASS resizing preserves controls and grows results 640
+SCREENSHOT library-640x400.png
+PASS resizing preserves controls and grows results 900
+SCREENSHOT library-900x600.png
+PASS resizing preserves controls and grows results 1200
+SCREENSHOT library-1200x760.png
+
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+
+Exit code: 0
