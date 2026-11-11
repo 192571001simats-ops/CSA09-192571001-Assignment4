@@ -1,1 +1,14 @@
-public class NamedConverter extends CurrencyView {public NamedConverter(){super("Named inner listener converter",false);Handler handler=new Handler();button.addActionListener(handler);}private class Handler implements java.awt.event.ActionListener {@Override public void actionPerformed(java.awt.event.ActionEvent e){convert();}}}
+public class NamedConverter extends CurrencyView {
+  public NamedConverter() {
+    super("Named inner listener converter", false);
+    Handler handler = new Handler();
+    button.addActionListener(handler);
+  }
+
+  private class Handler implements java.awt.event.ActionListener {
+    @Override
+    public void actionPerformed(java.awt.event.ActionEvent e) {
+      convert();
+    }
+  }
+}
