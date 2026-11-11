@@ -1,0 +1,11 @@
+$ java AppointmentValidation
+PASS department refresh removes stale doctors
+PASS normal appointment
+SCREENSHOT appointment-confirmed.png
+PASS doctor time conflict
+PASS invalid patient feedback
+SCREENSHOT appointment-invalid.png
+
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+
+Exit code: 0
