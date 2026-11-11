@@ -1,0 +1,9 @@
+$ java FeeValidation
+PASS fee payment reached service and JDBC off EDT
+SCREENSHOT fee-valid.png
+PASS Receipt has independent handler
+PASS invalid fee shown to user
+SCREENSHOT fee-invalid.png
+PASS Clear does not make payment
+
+Exit code: 0

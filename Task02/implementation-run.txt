@@ -1,0 +1,9 @@
+$ java AppointmentValidation
+PASS department refresh removes stale doctors
+PASS normal appointment
+SCREENSHOT appointment-confirmed.png
+PASS doctor time conflict
+PASS invalid patient feedback
+SCREENSHOT appointment-invalid.png
+
+Exit code: 0

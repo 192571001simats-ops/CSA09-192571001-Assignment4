@@ -1,0 +1,13 @@
+$ java RegistrationValidation
+PASS normal registration persists and appears in JTable
+SCREENSHOT registration-valid.png
+PASS database unique constraint rejects duplicate
+SCREENSHOT registration-duplicate.png
+PASS invalid registration feedback
+SCREENSHOT registration-invalid.png
+PASS filter selects only chosen event
+PASS export includes header and filtered registration
+PASS pagination returns 25,25,10 rows
+Worker operations completed without blocking the EDT; stale filter results are guarded by a request generation
+
+Exit code: 0
