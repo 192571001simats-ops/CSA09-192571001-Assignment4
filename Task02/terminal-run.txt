@@ -1,0 +1,12 @@
+$ java com.sun.tools.javac.Main -encoding UTF-8 -g -d build @sources.txt
+$ compile_status=0
+Compiler exit code: 0
+$ java -Xms128m -Xmx512m AppointmentValidation
+PASS department refresh removes stale doctors
+PASS normal appointment
+SCREENSHOT appointment-confirmed.png
+PASS doctor time conflict
+PASS invalid patient feedback
+SCREENSHOT appointment-invalid.png
+$ run_status=0
+Program exit code: 0

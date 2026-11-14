@@ -1,0 +1,20 @@
+{
+  "Task01": [
+    "FeeValidation"
+  ],
+  "Task02": [
+    "AppointmentValidation"
+  ],
+  "Task03": [
+    "ResizeValidation"
+  ],
+  "Task04": [
+    "DrawValidation"
+  ],
+  "Task05": [
+    "ConverterValidation"
+  ],
+  "Task06": [
+    "RegistrationValidation"
+  ]
+}

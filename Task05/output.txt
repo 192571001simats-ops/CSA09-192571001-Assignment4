@@ -1,0 +1,30 @@
+$ java ConverterValidation
+PASS supplied Converter valid conversion
+SCREENSHOT supplied-converter-valid.png
+PASS supplied Converter invalid input
+SCREENSHOT supplied-converter-invalid.png
+SCREENSHOT FrameConverter-valid-dialog.png
+PASS FrameConverter valid button conversion
+SCREENSHOT FrameConverter-invalid-dialog.png
+PASS FrameConverter Enter reuses same handler
+SCREENSHOT FrameConverter-invalid.png
+SCREENSHOT NamedConverter-valid-dialog.png
+PASS NamedConverter valid button conversion
+SCREENSHOT NamedConverter-invalid-dialog.png
+PASS NamedConverter Enter reuses same handler
+SCREENSHOT NamedConverter-invalid.png
+SCREENSHOT AnonymousConverter-valid-dialog.png
+PASS AnonymousConverter valid button conversion
+SCREENSHOT AnonymousConverter-invalid-dialog.png
+PASS AnonymousConverter Enter reuses same handler
+SCREENSHOT AnonymousConverter-invalid.png
+SCREENSHOT LambdaConverter-valid-dialog.png
+PASS LambdaConverter valid button conversion
+SCREENSHOT LambdaConverter-invalid-dialog.png
+PASS LambdaConverter Enter reuses same handler
+SCREENSHOT LambdaConverter-invalid.png
+All conversion rates are fixed assignment examples; they are not live exchange rates
+
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+
+Exit code: 0

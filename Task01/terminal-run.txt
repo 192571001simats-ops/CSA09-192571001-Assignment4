@@ -1,0 +1,12 @@
+$ java com.sun.tools.javac.Main -encoding UTF-8 -g -d build @sources.txt
+$ compile_status=0
+Compiler exit code: 0
+$ java -Xms128m -Xmx512m FeeValidation
+PASS fee payment reached service and JDBC off EDT
+SCREENSHOT fee-valid.png
+PASS Receipt has independent handler
+PASS invalid fee shown to user
+SCREENSHOT fee-invalid.png
+PASS Clear does not make payment
+$ run_status=0
+Program exit code: 0
